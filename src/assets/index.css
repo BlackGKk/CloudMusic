@@ -1,3 +1,11 @@
+@font-face {
+  font-family: bilbo;
+  src: url('./Bilbo-Regular.otf');
+}
+@font-face {
+  font-family: bilboSwash;
+  src: url('./BilboSwashCaps-Regular.otf');
+}
 body,
 html {
   height: 100%;
