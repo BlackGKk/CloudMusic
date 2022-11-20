@@ -65,7 +65,7 @@
       <div class="items">
         <div class="item" v-for="item in mvs" @click="toMv(item.id)" :key="item.id">
           <div class="img-wrap">
-            <img :src="item.cover" alt="" />
+            <img v-lazy="item.cover" alt="" />
             <div class="num-wrap">
               <div class="iconfont icon-play">▶</div>
               <div class="num">{{item.playCount}}</div>
