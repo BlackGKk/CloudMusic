@@ -94,14 +94,22 @@ export default {
     },
     // 播放音乐
     async playMusic (id) {
-      const { data: res } = await request.get('/song/url', {
-        params: {
-          id: id
-        }
-      })
-      // console.log(res)
-      this.url = res.data[0].url
-      this.$parent.musicUrl = this.url
+      // 获得歌曲详情
+      const { data: res } = await request.get('/song/detail?ids=' + id)
+      // 获得歌曲url
+      const { data: res2 } = await request.get('/song/url?id=' + id)
+      // 获得歌曲歌词
+      const { data: res3 } = await request.get('/lyric?id=' + id)
+      const audioData = {
+        name: res.songs[0].name,
+        artist: res.songs[0].ar[0].name,
+        url: res2.data[0].url,
+        cover: res.songs[0].al.picUrl,
+        lrc: res3.lrc.lyric
+      }
+      this.$bus.emit('getAudioData', audioData)
+      // this.url = res.data[0].url
+      // this.$parent.musicUrl = this.url
     }
   },
   watch: {

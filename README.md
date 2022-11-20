@@ -34,3 +34,22 @@ npm install
 ```dotnetcli
 npm run serve
 ```
+
+## 二、预览截图
+
+### 2.1 发现音乐
+
+![image-20221120143502155](./src/assets/image-20221120143502155.png)
+
+### 2.2 推荐歌单
+
+![image-20221120144102537](./src/assets/image-20221120144102537.png)
+
+### 2.3 最新音乐
+
+![image-20221120144200577](./src/assets/image-20221120144200577.png)
+
+### 2.4 最新MV
+
+![image-20221120144016070](./src/assets/image-20221120144016070.png)
+

@@ -37,7 +37,11 @@
     <!-- 播放标签 -->
     <div class="player">
       <!-- autoplay自动播放 -->
-      <audio :src='musicUrl' controls autoplay></audio>
+      <!-- <audio :src='musicUrl' controls autoplay></audio> -->
+      <aplayer
+      autoplay
+      :audio="audio"
+      :lrcType="1"></aplayer>
     </div>
   </div>
 </template>
@@ -47,7 +51,8 @@ export default {
   name: 'index',
   data () {
     return {
-      musicUrl: ''
+      musicUrl: '',
+      audio: []
     }
   },
   methods: {
@@ -55,6 +60,11 @@ export default {
       this.musicUrl = val
       console.log(val)
     }
+  },
+  mounted () {
+    this.$bus.on('getAudioData', obj => {
+      this.audio.unshift(obj)
+    })
   }
 }
 </script>

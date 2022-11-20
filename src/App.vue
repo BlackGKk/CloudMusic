@@ -13,6 +13,10 @@ export default {
   components: {
     top,
     index
+  },
+  data () {
+    return {
+    }
   }
 }
 </script>
